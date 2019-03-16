@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  aax2mp3:
+    tty: true
+    stdin_open: true
+    build:
+      context: .
+    volume:
+      - ${AAX_DIR:?}:/home/${CONTAINER_USER:?}/AAX
+      - ${AUDIOBOOK:?}:/home/${CONTAINER_USER:?}/Audiobook
